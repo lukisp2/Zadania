@@ -1,0 +1,26 @@
+{\rtf1\ansi\ansicpg1250\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;}
+{\colortbl;\red255\green255\blue255;\red191\green100\blue38;\red32\green32\blue32;\red153\green168\blue186;
+\red133\green96\blue154;\red254\green187\blue91;\red86\green132\blue173;}
+{\*\expandedcolortbl;;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c99608\c73333\c35686;\csgenericrgb\c33725\c51765\c67843;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 SELECT  \cf4 I.\cf5 SUMMARY \cf2 , \cf4 I.\cf5 DESCRIPTION\cf2 , \cf4 IL.\cf5 NAME\
+\cf2 FROM \cf4 ISSUES I\
+\cf2 JOIN \cf4 ISSUESLISTS IL \cf2 ON \cf4 I.\cf5 ISSUESLIST_ID \cf4 = IL.\cf5 ID\cf2 ;\
+\
+SELECT \cf4 I.\cf5 SUMMARY\cf2 , \cf4 I.\cf5 DESCRIPTION\cf2 , \cf4 U.\cf5 FIRSTNAME\cf2 , \cf4 U.\cf5 LASTNAME\
+\cf2 FROM \cf4 ISSUES I\
+\cf2 JOIN \cf4 USERS U \cf2 on \cf4 I.\cf5 USER_ID_ASSIGNEDTO \cf4 = U.\cf5 ID\cf2 ;\
+\
+SELECT \cf4 U.\cf5 FIRSTNAME\cf2 , \cf4 U.\cf5 LASTNAME\cf2 , 
+\f1\i \cf6 COUNT
+\f0\i0 \cf4 (\cf6 *\cf4 ) \cf2 AS \cf4 NO_OF_TASKS\
+\cf2 FROM \cf4 USERS U \cf2 JOIN \cf4 ISSUES I \cf2 on \cf4 U.\cf5 ID \cf4 = I.\cf5 USER_ID_ASSIGNEDTO\
+\cf2 GROUP BY \cf4 U.\cf5 ID\
+\cf2 HAVING 
+\f1\i \cf6 COUNT
+\f0\i0 \cf4 (\cf6 *\cf4 ) >=\cf7 1\
+}
